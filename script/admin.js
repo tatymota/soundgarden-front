@@ -2,6 +2,7 @@ function criarTabela(eventos) {
     let body = document.getElementById('table-eventos-body');
     for (let i = 0; i < eventos.length; i++) {
         let evento = eventos[i];
+        console.log(evento._id);
         let row = document.createElement('tr');
 
         let cellIndex = document.createElement('td');
@@ -31,7 +32,7 @@ function criarTabela(eventos) {
         let botaoEditar = document.createElement('a');
         botaoEditar.textContent = 'Editar';
         botaoEditar.setAttribute('class', 'btn btn-secondary');
-        botaoEditar.setAttribute('href', 'editar.html');
+        botaoEditar.setAttribute('href', `editar-evento.html?id=${evento._id}`);
         cellBotoes.appendChild(botaoEditar);
 
         let botaoExcluir = document.createElement('a');
