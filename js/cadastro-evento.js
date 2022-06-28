@@ -16,5 +16,5 @@ function cadastrarEvento(){
     request.send(JSON.stringify(payload));
 }
 
-
 botaoCriarEvento.addEventListener("click", cadastrarEvento, false); //adicionando callback ao evento de click
+
