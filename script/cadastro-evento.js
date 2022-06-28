@@ -25,6 +25,7 @@ let formulario = document.getElementById("formulario-cadastro-evento"); // acess
     })
     .catch(err => {
       console.error(err);
+      alert("Falha no cadastro!");
     });
   }
 
