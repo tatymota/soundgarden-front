@@ -1,18 +1,54 @@
 function criarTabela(eventos) {
-    var table = document.createElement('table');
-    for (var i = 0; i < events.length; i++) {
-        var row = document.createElement('tr');
-        var cell = document.createElement('td');
-        cell.textContent = evento[]
-        row.appendChild(cell);
-        table.appendChild(row);
+    let body = document.getElementById('table-eventos-body');
+    for (let i = 0; i < eventos.length; i++) {
+        let evento = eventos[i];
+        let row = document.createElement('tr');
+
+        let cellIndex = document.createElement('td');
+        cellIndex.textContent = `${i + 1}`;
+        row.appendChild(cellIndex);
+
+        let cellData = document.createElement('td');
+        cellData.textContent = evento['scheduled']
+        row.appendChild(cellData);
+
+        let cellTitulo = document.createElement('td');
+        cellTitulo.textContent = evento['name'];
+        row.appendChild(cellTitulo);
+
+        let cellAtracoes = document.createElement('td');
+        cellAtracoes.textContent = evento['attractions'];
+        row.appendChild(cellAtracoes);
+
+        let cellBotoes= document.createElement('td');
+
+        let botaoReservas = document.createElement('a');
+        botaoReservas.textContent = 'Reservar';
+        botaoReservas.setAttribute('class', 'btn btn-dark');
+        botaoReservas.setAttribute('href', 'reservas.html');
+        cellBotoes.appendChild(botaoReservas);
+
+        let botaoEditar = document.createElement('a');
+        botaoEditar.textContent = 'Editar';
+        botaoEditar.setAttribute('class', 'btn btn-secondary');
+        botaoEditar.setAttribute('href', 'editar.html');
+        cellBotoes.appendChild(botaoEditar);
+
+        let botaoExcluir = document.createElement('a');
+        botaoExcluir.textContent = 'Excluir';
+        botaoExcluir.setAttribute('class', 'btn btn-danger');
+        botaoExcluir.setAttribute('href', 'excluir.html');
+        cellBotoes.appendChild(botaoExcluir);
+
+        row.appendChild(cellBotoes);
+
+        body.appendChild(row);
     }
 }
-
-
 fetch("https://xp41-soundgarden-api.herokuapp.com/events").then(function(response) {
     return response.json();
   }).then(function(eventos) {
+    console.log(eventos);
     criarTabela(eventos)
   }).catch(function() {
     alert("Falhou");
