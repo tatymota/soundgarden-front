@@ -38,7 +38,7 @@ function criarTabela(eventos) {
         let botaoExcluir = document.createElement('a');
         botaoExcluir.textContent = 'Excluir';
         botaoExcluir.setAttribute('class', 'btn btn-danger');
-        botaoExcluir.setAttribute('href', 'excluir.html');
+        botaoExcluir.setAttribute('href', `excluir-evento.html?id=${evento._id}`);
         cellBotoes.appendChild(botaoExcluir);
 
         row.appendChild(cellBotoes);

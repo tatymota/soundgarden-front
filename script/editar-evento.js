@@ -26,7 +26,6 @@ fetch(`https://xp41-soundgarden-api.herokuapp.com/events/${id}`,{
     data.value=evento.scheduled;
     let lotacao = document.getElementById("lotacao"); 
     lotacao.value=evento.number_tickets;
-    console.log(evento);
   }).catch(function() {
     alert("Falhou");
   });

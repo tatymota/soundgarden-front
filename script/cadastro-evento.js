@@ -2,6 +2,7 @@ let botaoCriarEvento = document.getElementById("botao-criar-evento"); // acesso 
 let formulario = document.getElementById("formulario-cadastro-evento"); // acesso ao formulário pelo ID
 
  function cadastrarEvento() {
+      console.log(formulario[4].value)
      const body = { //JSON com as informações necessárias para criar o evento
          name: formulario[0].value,
          poster: formulario[1].value,
