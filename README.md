@@ -8,7 +8,7 @@
 </h4>
 
 ## ✔️ Sobre o projeto
-Projeto em realizado no curso da Gama Academy, visando a prática com a linguagem JavaScript, consumo de uma API (métodos GET, POST, PUT, DELETE) e bootstrap. 
+Projeto em realizado no curso da Gama Academy, visando a prática com a linguagem JavaScript, consumo de uma API (métodos GET, POST, PUT, DEL) e bootstrap. 
  
 
 ## ✔️ Técnicas e tecnologias utilizadas
