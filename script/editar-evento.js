@@ -6,6 +6,11 @@ const urlParams = new URLSearchParams(queryParams);
 const id = urlParams.get('id')
 console.log(id);
 
+function setTime(element, date) {
+  var isoString = date.toISOString()
+  element.value = isoString.substring(0, (isoString.indexOf("T")|0) + 6|0);
+}
+
 fetch(`https://xp41-soundgarden-api.herokuapp.com/events/${id}`,{
     "headers": {
         "Content-Type": "application/json"
@@ -23,7 +28,8 @@ fetch(`https://xp41-soundgarden-api.herokuapp.com/events/${id}`,{
     let descricao = document.getElementById("descricao"); 
     descricao.value=evento.description;
     let data = document.getElementById("data"); 
-    data.value=evento.scheduled;
+    let date = new Date(evento.scheduled);
+    setTime(data, date);
     let lotacao = document.getElementById("lotacao"); 
     lotacao.value=evento.number_tickets;
   }).catch(function() {
