@@ -10,7 +10,8 @@ function criarTabela(eventos) {
         row.appendChild(cellIndex);
 
         let cellData = document.createElement('td');
-        cellData.textContent = evento['scheduled']
+        let date = new Date(evento.scheduled);
+        cellData.textContent = date.toLocaleString();
         row.appendChild(cellData);
 
         let cellTitulo = document.createElement('td');
