@@ -6,7 +6,8 @@ function criarTabela(eventos) {
         article.setAttribute("class", "evento card p-5 m-3");
 
         let cellTitulo = document.createElement('h2');
-        cellTitulo.textContent = evento['name']+ " - " + evento['scheduled'];
+        let date = new Date(evento.scheduled);
+        cellTitulo.textContent = evento['name']+ " - " + date.toLocaleString();
         article.appendChild(cellTitulo);
         
         let cellAtracoes = document.createElement('h4');
