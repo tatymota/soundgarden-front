@@ -1,6 +1,7 @@
 function criarTabela(eventos) {
     let body = document.getElementById("card-eventos");
-    for (let i = 0; i < eventos.length; i++) {
+    let quantidade = Number(body.getAttribute("quantidade")) || eventos.length;
+    for (let i = 0; i < quantidade; i++) {
         let evento = eventos[i];
         let article = document.createElement('article');
         article.setAttribute("class", "evento card p-5 m-3");
